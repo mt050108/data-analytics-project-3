@@ -38,3 +38,16 @@ COUNT(*) AS Orders
 FROM orders
 GROUP BY ReferralSource
 ORDER BY Orders DESC;
+SELECT *
+FROM orders
+ORDER BY TotalPrice DESC
+LIMIT 1;
+SELECT OrderStatus,
+COUNT(*) AS Total_Orders
+FROM orders
+GROUP BY OrderStatus;
+SELECT Product,
+ROUND(AVG(TotalPrice),2) AS Average_Revenue
+FROM orders
+GROUP BY Product
+ORDER BY Average_Revenue DESC;
